@@ -5,11 +5,9 @@
 # - increment version number by 1
 # - push a new release to Github
 # - trigger new image build
-#
 
 set -e
 
-# Get tags locally
 git fetch --all
 
 # https://gist.github.com/rponte/fdc0724dd984088606b0
@@ -21,7 +19,6 @@ latest_commit=`git log --oneline -1`
 
 build_url="https://github.com/tradingstrategy-ai/frontend/pkgs/container/frontend"
 
-# https://ryanstutorials.net/bash-scripting-tutorial/bash-arithmetic.php
 let "new_version = $latest_version + 1"
 
 new_tag="v$new_version"
